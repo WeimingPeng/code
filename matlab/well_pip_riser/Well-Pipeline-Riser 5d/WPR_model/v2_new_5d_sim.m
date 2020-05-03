@@ -4,8 +4,8 @@ clear all
 % **** System parameters ****
 par = v2_new_5d_parameters();
 % **** System Inputs ****
-z1 = 1;
-z2 = 0.1;
+z1 = 30;
+z2 = 0.04;
 global u0;
 u0 = [z1;z2;0;0];
 % ******** Finding initial states *************
@@ -26,7 +26,7 @@ t_f = 2;        % Final simulation time (hour)
 
 %% **********************
 disp('Simulation of nonlinear model');
-dx = [0;-0.01;0;0;0];
+dx = [0;-0.02;0;0;0];
 u=[z1;z2];
 M=eye(5);
 options=odeset('Mass',M,'BDF','on','AbsTol',1e-10,'RelTol',1e-10,'MaxStep',1);
